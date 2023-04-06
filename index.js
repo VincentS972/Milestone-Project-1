@@ -1,113 +1,127 @@
 const pc = character(100, 110)
 
-function character(x, y) {
-    const element = newImage('assets/rhc-idle.gif')
-    element.style.zIndex = 1;
+const npc = oldLady(-150, 110)
 
-    function handleDirectionChange(direction) {
-        if (direction === null) {
-            element.src = `assets/rhc-idle.gif`
-        }
+// have the NPC start walking east immediately
+async function moveNPC(){
+    // await npc.walkNorth(1400)
+    // await npc.walkEast(1200)
+    // await npc.walkSouth(300)
+    await npc.walkEast(9500)
+    // await npc.walkSouth(1500)
+    // await npc.walkWest(2700)
+    // await npc.walkNorth(400)
+}
+moveNPC()
 
-        if (direction === 'north') {
-            element.src = `assets/rhc-running.gif`
-0        }
+// function character(x, y) {
+//     const element = newImage('assets/rhc-idle.gif')
+//     element.style.zIndex = 1;
+
+//     function handleDirectionChange(direction) {
+//         if (direction === null) {
+//             element.src = `assets/rhc-idle.gif`
+//         }
+
+//         if (direction === 'north') {
+//             element.src = `assets/rhc-running.gif`
+// 0        }
     
-        if (direction === 'east') {
-            element.src = `assets/rhc-running.gif`
-        }
+//         if (direction === 'east') {
+//             element.src = `assets/rhc-running.gif`
+//         }
 
-        if (direction === 'west') {
-            element.src = `assets/rhc-running.gif`
-        }
+//         if (direction === 'west') {
+//             element.src = `assets/rhc-running.gif`
+//         }
 
-        if (direction === 'south') {
-            element.src = `assets/rhc-running.gif`
-        }
+//         if (direction === 'south') {
+//             element.src = `assets/rhc-running.gif`
+//         }
       
-    }
+//     }
 
-    move(element).withArrowKeys(x, y, handleDirectionChange)
+//     move(element).withArrowKeys(x, y, handleDirectionChange)
 
-    return {
-        element: element
-    }
-}
-
-
-function newImage(url){
-    let image = document.createElement('img')
-    image.src = url
-    image.style.position = 'absolute'
-    document.body.append(image)
-    return image
-}
+//     return {
+//         element: element
+//     }
+// }
 
 
-function move(element) {
-    element.style.position = 'fixed'
+// function newImage(url){
+//     let image = document.createElement('img')
+//     image.src = url
+//     image.style.position = 'absolute'
+//     document.body.append(image)
+//     return image
+// }
 
-    function moveToCoordinates(left, bottom) {
-        element.style.left = left + 'px'
-        element.style.bottom = bottom + 'px'
-    }
 
-    function moveWithArrowKeys(left, bottom, callback){
-        let direction = null;
-        let x = left;
-        let y = bottom;
+// function move(element) {
+//     element.style.position = 'fixed'
 
-        element.style.left = x + 'px'
-        element.style.bottom = y + 'px'
+//     function moveToCoordinates(left, bottom) {
+//         element.style.left = left + 'px'
+//         element.style.bottom = bottom + 'px'
+//     }
+
+//     function moveWithArrowKeys(left, bottom, callback){
+//         let direction = null;
+//         let x = left;
+//         let y = bottom;
+
+//         element.style.left = x + 'px'
+//         element.style.bottom = y + 'px'
         
-        function moveCharacter(){ 
-            if(direction === 'west'){
-                x-=1
-            }
-            if(direction === 'north'){
-                y+=1
-            }
-            if(direction === 'east'){
-                x+=1
-            }
-            if(direction === 'south'){
-                y-=1
-            }
-            element.style.left = x + 'px'
-            element.style.bottom = y + 'px'
-        }
+//         function moveCharacter(){ 
+//             if(direction === 'west'){
+//                 x-=1
+//             }
+//             if(direction === 'north'){
+//                 y+=1
+//             }
+//             if(direction === 'east'){
+//                 x+=1
+//             }
+//             if(direction === 'south'){
+//                 y-=1
+//             }
+//             element.style.left = x + 'px'
+//             element.style.bottom = y + 'px'
+//         }
         
-        setInterval(moveCharacter, 1)
+//         setInterval(moveCharacter, 1)
         
-        document.addEventListener('keydown', function(e){
-            if(e.repeat) return;
+//         document.addEventListener('keydown', function(e){
+//             if(e.repeat) return;
         
-            if(e.key === 'ArrowLeft'){
-                direction = 'west'
-            }
-            if(e.key === 'ArrowUp'){
-                direction = 'north'
-            }
-            if(e.key === 'ArrowRight'){
-                direction = 'east'
-            }
-            if(e.key === 'ArrowDown'){
-                direction = 'south'
-            }
-            callback(direction)
-        })
+//             if(e.key === 'ArrowLeft'){
+//                 direction = 'west'
+//             }
+//             if(e.key === 'ArrowUp'){
+//                 direction = 'north'
+//             }
+//             if(e.key === 'ArrowRight'){
+//                 direction = 'east'
+//             }
+//             if(e.key === 'ArrowDown'){
+//                 direction = 'south'
+//             }
+//             callback(direction)
+//         })
 
 
-        document.addEventListener('keyup', function(e){
-            direction = null
-            callback(direction)
-        })
-    }
+//         document.addEventListener('keyup', function(e){
+//             direction = null
+//             callback(direction)
+//         })
+//     }
 
-    return {
-        to: moveToCoordinates,
-        withArrowKeys: moveWithArrowKeys
-    }
-}
+//     return {
+//         to: moveToCoordinates,
+//         withArrowKeys: moveWithArrowKeys
+//     }
+// }
 
 
