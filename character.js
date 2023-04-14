@@ -1,18 +1,12 @@
-
-
 function character(x, y) {
-    const element = newImage('assets/rhc-idle.gif')
+    const element = newImage('assets/rhc-running.gif')
     element.style.zIndex = 1;
 
     function handleDirectionChange(direction) {
         if (direction === null) {
-            element.src = `assets/rhc-idle.gif`
-        }
-
-        if (direction === 'north') {
             element.src = `assets/rhc-running.gif`
         }
-    
+
         if (direction === 'east') {
             element.src = `assets/rhc-running.gif`
         }
@@ -21,9 +15,6 @@ function character(x, y) {
             element.src = `assets/rhc-running.gif`
         }
 
-        if (direction === 'south') {
-            element.src = `assets/rhc-running.gif`
-        }
       
     }
 
