@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+    
+}
+
+#ground {
+  width: 100%;
+  height: 25%;
+  background-color: brown;
+  position: absolute;
+  bottom: 0;
+}
+
+
+    
+/* main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+} */
+
+.container {
+    overflow: hidden;
+  }
+  
+  .sliding-background {
+    background: url("assets/gvineta-smite-background.jpg") repeat-x;
+    height: 991px;
+    width: 5076px;
+    animation: slide 6s linear infinite;
+  }
+  
+  @keyframes slide{
+    0% {
+    transform: translate3d(0, 0, 0);
+  }
+    100% {
+    transform: translate3d(-1692px, 0, 0);
+  }
+}
+
+#character {
+  height: 600px;
+  width: 600px;
+  left: 100px;
+  bottom: 0px ;
+  position: absolute;
+  background-image: url("assets/rhc-running.gif");
+  background-size: cover;
+  z-index: 1;
+}
+
+#oldlady {
+  height: 800px;
+  width: 800px;
+  left: -200px;
+  bottom: -15px ;
+  position: absolute;
+  background-image: url("assets/oldLady-attack.gif");
+  background-size: cover;
+  z-index: 1;
+}
+
+/* #jumping {
+ background-image: url("assets/rhc-jumping.gif");
+ z-index: 1;
+} */
+
+#crate {
+  background-image: url("assets/crate.png") repeat-x;
+  height: 50px;
+  width: 50px;
+  animation: slide 6s linear infinite;
+  position: absolute;
+  bottom: 200px;
+  right: 0px;
+  z-index: 1;
+
+  @keyframes slide{
+    0%
+  }
+}
