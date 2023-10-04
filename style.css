@@ -13,14 +13,6 @@ body {
   bottom: 0;
 }
 
-
-    
-/* main {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-} */
-
 .container {
     overflow: hidden;
   }
@@ -34,10 +26,10 @@ body {
   
   @keyframes slide{
     0% {
-    transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
   }
     100% {
-    transform: translate3d(-1692px, 0, 0);
+      transform: translate3d(-1692px, 0, 0);
   }
 }
 
@@ -63,22 +55,48 @@ body {
   z-index: 1;
 }
 
-/* #jumping {
- background-image: url("assets/rhc-jumping.gif");
- z-index: 1;
-} */
-
 #crate {
-  background-image: url("assets/crate.png") repeat-x;
-  height: 50px;
-  width: 50px;
-  animation: slide 6s linear infinite;
+  background-image: url("assets/crate.png");
+  background-size: cover;
+  height: 80px;
+  width: 80px;
+  animation: crate 6s infinite linear;
   position: absolute;
   bottom: 200px;
   right: 0px;
   z-index: 1;
+}
 
-  @keyframes slide{
-    0%
+#crate2 {
+  background-image: url("assets/crate.png");
+  background-size: cover;
+  height: 80px;
+  width: 80px;
+  animation: crate 6s infinite linear;
+  position: absolute;
+  bottom: 200px;
+  right: -1000px;
+  z-index: 1;
+}
+
+#crate3 {
+  background-image: url("assets/crate.png");
+  background-size: cover;
+  height: 80px;
+  width: 80px;
+  animation: crate 6s infinite linear;
+  position: absolute;
+  bottom: 200px;
+  right: -2000px;
+  z-index: 1;
+}
+
+
+@keyframes crate{
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-3500px, 0, 0);
   }
 }
